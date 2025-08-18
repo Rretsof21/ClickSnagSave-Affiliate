@@ -1,0 +1,54 @@
+# Copy into your Actions secret named ENV_YAML
+
+app:
+  timezone: "America/Chicago"
+  marketplace: "www.amazon.com"
+  max_products: 8
+  min_discount_percent: 30
+  search_index: "All"
+  allow_categories: []
+  block_keywords: []
+  price_currency: "USD"
+  post_mode: "carousel"     # carousel posts 9 images (title + 8 products)
+  ig_album_size: 9          # 9 slides total
+
+amazon:
+  partner_tag: "rretsof21-20"
+  access_key: "${{ secrets.AMAZON_ACCESS_KEY }}"
+  secret_key: "${{ secrets.AMAZON_SECRET_KEY }}"
+  host: "webservices.amazon.com"
+  region: "us-east-1"
+
+github:
+  repo: "rretsof21/ClickSnagSave-Affiliate"
+  branch: "main"
+  token: "${{ secrets.GH_TOKEN }}"
+  site_dir: "website"
+  ig_asset_dir: "website/assets/ig"
+
+canva:
+  template_id: "${{ secrets.CANVA_TEMPLATE_ID }}"
+  client_id: "${{ secrets.CANVA_CLIENT_ID }}"
+  client_secret: "${{ secrets.CANVA_CLIENT_SECRET }}"
+  refresh_token: "${{ secrets.CANVA_REFRESH_TOKEN }}"
+  export_format: "png"
+  export_size: "1080"
+  # Field names for slides 2–9 (products 1–8)
+  # Slide 1 is title page (unchanged)
+  name_field_pattern: "Product Name {i}"
+  old_price_field_pattern: "Old Price {i}"
+  new_price_field_pattern: "New Price {i}"
+  pct_field_pattern: "%{i}"
+
+instagram:
+  ig_user_id: "${{ secrets.IG_USER_ID }}"
+  page_id: "${{ secrets.FB_PAGE_ID }}"
+  access_token: "${{ secrets.IG_LONG_LIVED_TOKEN }}"
+
+openai:
+  api_key: "${{ secrets.OPENAI_API_KEY }}"
+
+legal:
+  disclosure: "As an Amazon Associate I earn from qualifying purchases."
+  show_prices: true
+  show_star_rating: "off"

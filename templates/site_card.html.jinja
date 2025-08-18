@@ -1,0 +1,13 @@
+<li class="card">
+  <a href="{{ product.affiliate_url }}" target="_blank" rel="nofollow noopener">
+    <img src="{{ product.image }}" alt="{{ product.title | e }}"/>
+    <h3>{{ product.title }}</h3>
+    {% if product.pricing and product.pricing.price and product.pricing.saving_basis %}
+      <p class="price">
+        <span class="old">${{ '%.2f'|format(product.pricing.saving_basis) }}</span>
+        <span class="new">${{ '%.2f'|format(product.pricing.price) }}</span>
+        <span class="off">-{{ product.discount_percent }}%</span>
+      </p>
+    {% endif %}
+  </a>
+</li>

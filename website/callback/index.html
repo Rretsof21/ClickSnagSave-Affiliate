@@ -1,0 +1,11 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Canva Callback</title></head>
+<body>
+<h1>Canva Authorization</h1>
+<p>Copy the <b>code</b> parameter from this page’s URL (address bar) and use it to get your refresh token.</p>
+<script>
+  const params = new URLSearchParams(location.search);
+  const code = params.get('code');
+  if (code) document.body.insertAdjacentHTML('beforeend', `<p><b>Code:</b> ${code}</p>`);
+</script>
+</body></html>
